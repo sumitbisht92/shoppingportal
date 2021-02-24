@@ -1,27 +1,26 @@
 <template>
-  <div
-    class="d-flex mt-2"
-    style="-webkit-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%)"
-  >
-    <div><img src="/Images/S.png" alt="" class="size" /></div>
+  <div class="d-flex" style="-webkit-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%)">
+    <div><img src="/Images/S.png" alt="" class="size mt-2" /></div>
 
     <div class="d-flex align-items-center">
       <div class="pl-3 dropdown" v-for="(item, index) in Nav" :key="index">
-        <button class="dropbtn font-weight-bold heading-hover text-color" style="padding-bottom: 40px">
+        <button
+          class="dropbtn font-weight-bold heading-hover text-color"
+          style="padding-bottom: 25px"
+        >
           {{ item.heading }}
         </button>
         <div class="dropdown-content">
           <div class="dropdown-card">
             <div v-for="(item1, index) in item.subHeading" :key="index">
-              <div class="d-flex">
-                {{ item1.productType }}
+              <div class="d-flex pl-5 pt-4 test">
+                <b class="text-uppercase"> {{ item1.productType }} > </b>
                 <a
-                  class="d-flex"
                   v-for="(item2, index) in item1.products"
                   :key="index"
                   href="#"
                 >
-                  <div>{{ item2 }}</div>
+                  <div class="d-inline pt-0">{{ item2 }}</div>
                 </a>
               </div>
               <hr />
@@ -139,7 +138,8 @@ export default {
               products: ['Casual Shoes', 'Sports Shoes', 'Flip Flops'],
             },
             {
-              productType: 'Watches',
+              productType: 'Gadgets',
+              products: ['Fitness Gadgets', 'Headphones', 'Speakers'],
             },
             {
               productType: 'Fashion Accessories',
@@ -151,25 +151,65 @@ export default {
         {
           heading: 'WOMEN',
           subHeading: [
-            { productType: 'A', products: [1, 2, 3] },
-            { productType: 'B', products: [1, 2, 3] },
-            { productType: 'C', products: [1, 2, 3] },
+            {
+              productType: 'Western Wear',
+              products: ['Dresses', 'Jumpsuits', 'Tops'],
+            },
+            {
+              productType: 'Footwear ',
+              products: ['Flat', 'Heels', 'Casual Shoes'],
+            },
+            {
+              productType: 'Jewellery',
+              products: ['Fashion Jewellery', 'Fine Jewellery', 'Earrings'],
+            },
+            {
+              productType: 'Gadgets',
+              products: ['Fitness Gadgets', 'Headphones', 'Speakers'],
+            },
+            {
+              productType: 'Beauty Products',
+              products: ['Makeup', 'Fragrances', 'Skincare'],
+            },
           ],
         },
         {
           heading: 'KIDS',
           subHeading: [
-            { productType: 'A', products: [4, 2, 3] },
-            { productType: 'B', products: [4, 2, 3] },
-            { productType: 'C', products: [4, 2, 3] },
+            {
+              productType: 'Boys Clothing',
+              products: ['Tshirts', 'Shirts', 'Shorts', 'Trousers'],
+            },
+            {
+              productType: 'Girls Clothing',
+              products: ['Dresses', 'Top', 'Tshirts', 'Ethnic Wear'],
+            },
+            {
+              productType: 'Boys Footwear',
+              products: ['Casual Shoes', 'Sports Shoes', 'Flip Flops'],
+            },
+            {
+              productType: 'Girls Footwear',
+              products: ['Casual Shoes', 'Sports Shoes', 'Flip Flops'],
+            },
+            {
+              productType: 'Infants',
+              products: ['Clothing sets', 'Bottomwear', 'Shirts & Tshirts'],
+            },
           ],
         },
         {
           heading: 'HOME DECOR',
           subHeading: [
-            { productType: 'A', products: [9, 2, 9] },
-            { productType: 'B', products: [9, 2, 9] },
-            { productType: 'C', products: [9, 2, 9] },
+            {
+              productType: 'Flooring',
+              products: ['Carpets', 'Door Mats', 'Floor Mats'],
+            },
+            {
+              productType: 'Lamps & Lighting',
+              products: ['Floor Lamps', 'Table Lamps', 'Wall Lamps'],
+            },
+            { productType: 'Kitchen & Table', products: ['Dinnerware & Serveware','Cups & Mugs','Bar & Drinkware'] },
           ],
         },
       ],
@@ -218,7 +258,7 @@ export default {
 }
 .dropdown-content {
   position: fixed;
-  top: 91px;
+  top: 80px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -263,5 +303,9 @@ h6 {
 
 .text-color {
   color: #696e79;
+}
+
+.test a {
+  margin-top: -12px;
 }
 </style>
