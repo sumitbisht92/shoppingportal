@@ -7,7 +7,7 @@
 
     <div class="d-flex align-items-center">
       <div class="pl-3 dropdown" v-for="(item, index) in Nav" :key="index">
-        <button class="dropbtn font-weight-bold heading-hover text-color">
+        <button class="dropbtn font-weight-bold heading-hover text-color" style="padding-bottom: 40px">
           {{ item.heading }}
         </button>
         <div class="dropdown-content">
@@ -239,7 +239,6 @@ export default {
 }
 
 .heading-hover:hover {
-
   border-bottom: 4px solid #a6a6a6;
 }
 .dropdown:hover .dropbtn {
@@ -254,11 +253,15 @@ export default {
   background-color: white;
   position: absolute;
   left: 5%;
+  z-index: 1;
+  pointer-events: auto;
 }
 
 h6 {
   font-size: 12px;
 }
 
-.text-color{color: #696e79}
+.text-color {
+  color: #696e79;
+}
 </style>
