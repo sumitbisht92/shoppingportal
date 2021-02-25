@@ -6,7 +6,7 @@
       <div class="pl-3 dropdown" v-for="(item, index) in Nav" :key="index">
         <button
           class="dropbtn font-weight-bold heading-hover text-color"
-          style="padding-bottom: 44px"
+          style="padding-bottom: 30px; padding-top: 26px"
         >
           {{ item.heading }}
         </button>
@@ -30,32 +30,29 @@
       </div>
     </div>
     <div class="input-group ml-auto inputbox-width">
-      
-        <span class="input-group-text inputbox-effect" >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 20"
-            stroke="#696e79"
-            height="20px"
-            width="20px"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            /></svg
-        ></span>
-         <input
+      <span class="input-group-text inputbox-effect">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 20"
+          stroke="#696e79"
+          height="20px"
+          width="20px"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          /></svg
+      ></span>
+      <input
         type="text"
         class="form-control inputbox-effect d-flex"
         placeholder="Search for products, brands and more"
       />
-     
-     
     </div>
-    <div class="rightside-icons d-flex ">
+    <div class="rightside-icons d-flex">
       <div class="dropdown drp-profile" style="">
         <button class="dropbtn">
           <svg
@@ -73,13 +70,18 @@
               d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <h6 >Profile</h6>
+          <h6>Profile</h6>
         </button>
-        <div class="dropdown-content line-height profile-card" style="padding-bottom: 25px">
-          <a href="#">Orders</a>
-          <a href="#">Wishlist</a>
-          <a href="#">GiftCards</a>
-          <a href="#">Contact Us</a>
+        <div
+          class="dropdown-content line-height profile-card"
+          style="padding-bottom: 25px"
+        >
+          <div class="droCont_profile" style="pointer-events: auto; background: #fff">
+            <a href="#">Orders</a>
+            <a href="#">Wishlist</a>
+            <a href="#">GiftCards</a>
+            <a href="#">Contact Us</a>
+          </div>
         </div>
       </div>
       <button class="dropbtn">
@@ -246,10 +248,8 @@ export default {
 }
 .inputbox-width {
   width: 330px;
-  margin-top: 20px;
   margin-right: 20px;
-  margin-bottom: 20px;
-  margin-left: 60px;
+  align-self: center;
 }
 .card-design {
   list-style: none;
@@ -267,7 +267,7 @@ export default {
 }
 .dropdown-content {
   position: fixed;
-  top: 80px;
+  top: 84px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -321,7 +321,6 @@ h6 {
 .drp-profile {
   position: relative;
   height: 60px;
-  
 }
 
 .profile-card {
@@ -341,8 +340,8 @@ h6 {
   /* margin-top: 18px; */
 }
 
-.drp-profile:hover .profile-card  {
-    visibility: visible;
-    opacity: 1;
+.drp-profile:hover .profile-card {
+  visibility: visible;
+  opacity: 1;
 }
 </style>
