@@ -6,7 +6,7 @@
       <div class="pl-3 dropdown" v-for="(item, index) in Nav" :key="index">
         <button
           class="dropbtn font-weight-bold heading-hover text-color"
-          style="padding-bottom: 25px"
+          style="padding-bottom: 44px"
         >
           {{ item.heading }}
         </button>
@@ -30,14 +30,15 @@
       </div>
     </div>
     <div class="input-group ml-auto inputbox-width">
-      <div>
-        <span class="input-group-text inputbox-effect">
+      
+        <span class="input-group-text inputbox-effect" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 24 24"
+            viewBox="0 0 20 20"
             stroke="#696e79"
-            height="22px"
+            height="20px"
+            width="20px"
           >
             <path
               stroke-linecap="round"
@@ -46,15 +47,16 @@
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             /></svg
         ></span>
-      </div>
-      <input
+         <input
         type="text"
-        class="form-control inputbox-effect"
+        class="form-control inputbox-effect d-flex"
         placeholder="Search for products, brands and more"
       />
+     
+     
     </div>
-    <div class="rightside-icons d-flex">
-      <div class="dropdown">
+    <div class="rightside-icons d-flex ">
+      <div class="dropdown drp-profile" style="">
         <button class="dropbtn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -71,9 +73,9 @@
               d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <h6>Profile</h6>
+          <h6 >Profile</h6>
         </button>
-        <div class="dropdown-content line-height">
+        <div class="dropdown-content line-height profile-card" style="padding-bottom: 25px">
           <a href="#">Orders</a>
           <a href="#">Wishlist</a>
           <a href="#">GiftCards</a>
@@ -209,7 +211,14 @@ export default {
               productType: 'Lamps & Lighting',
               products: ['Floor Lamps', 'Table Lamps', 'Wall Lamps'],
             },
-            { productType: 'Kitchen & Table', products: ['Dinnerware & Serveware','Cups & Mugs','Bar & Drinkware'] },
+            {
+              productType: 'Kitchen & Table',
+              products: [
+                'Dinnerware & Serveware',
+                'Cups & Mugs',
+                'Bar & Drinkware',
+              ],
+            },
           ],
         },
       ],
@@ -307,5 +316,33 @@ h6 {
 
 .test a {
   margin-top: -12px;
+}
+
+.drp-profile {
+  position: relative;
+  height: 60px;
+  
+}
+
+.profile-card {
+  width: 335px;
+  left: -137.5px;
+  top: 83px;
+  position: absolute;
+  padding: 25px 20px 15px;
+  z-index: 9;
+  box-shadow: 0 1px 10px rgb(0 0 0 / 8%);
+  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  background-color: #fff;
+  color: #3e4152;
+  border: 1px solid #f5f5f6;
+  /* margin: -2px 0; */
+  height: max-content;
+  /* margin-top: 18px; */
+}
+
+.drp-profile:hover .profile-card  {
+    visibility: visible;
+    opacity: 1;
 }
 </style>
