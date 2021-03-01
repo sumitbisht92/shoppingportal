@@ -1,5 +1,8 @@
 <template>
-  <div class="d-flex" style="-webkit-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%)">
+  <div
+    class="d-flex"
+    style="-webkit-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);position:relative;z-index:2"
+  >
     <div><img src="/Images/S.png" alt="" class="size mt-2" /></div>
 
     <div class="d-flex align-items-center">
@@ -53,8 +56,8 @@
       />
     </div>
     <div class="rightside-icons d-flex">
-      <div class="dropdown drp-profile" style="">
-        <button class="dropbtn">
+      <div class="dropdown drp-profile">
+        <button class="dropbtn heading-hover text-color">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -76,7 +79,10 @@
           class="dropdown-content line-height profile-card"
           style="padding-bottom: 25px"
         >
-          <div class="droCont_profile" style="pointer-events: auto; background: #fff">
+          <div
+            class="droCont_profile"
+            style="pointer-events: auto; background: #fff"
+          >
             <a href="#">Orders</a>
             <a href="#">Wishlist</a>
             <a href="#">GiftCards</a>
