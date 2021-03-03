@@ -1,6 +1,6 @@
 <template>
   <div >
-    <div style="position: relative;height:400px;">
+    <div style="position: relative;">
       <img :src="imageSrc[currentIndex]" alt="" style="width: 100%;
     height: 100%;"/>
 

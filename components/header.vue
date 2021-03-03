@@ -1,7 +1,11 @@
 <template>
   <div
     class="d-flex"
-    style="-webkit-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);position:relative;z-index:2"
+    style="
+      -webkit-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+      position: relative;
+      z-index: 2;
+    "
   >
     <div><img src="/Images/S.png" alt="" class="size mt-2" /></div>
 
@@ -9,9 +13,9 @@
       <div class="pl-3 dropdown" v-for="(item, index) in Nav" :key="index">
         <button
           class="dropbtn font-weight-bold heading-hover text-color"
-          style="padding-bottom: 30px; padding-top: 26px"
+          style="padding-bottom: 30px; padding-top: 26px;"
         >
-          {{ item.heading }}
+        <nuxt-link :to="`/shop/${item.heading}`">  {{ item.heading }}</nuxt-link>
         </button>
         <div class="dropdown-content">
           <div class="dropdown-card">
@@ -23,7 +27,13 @@
                   :key="index"
                   href="#"
                 >
-                  <div class="d-inline pt-0">{{ item2 }}</div>
+                  <!-- to bring in URL -->
+                  <div class="d-inline pt-0">
+                    <nuxt-link
+                      :to="`/${item.heading}/${item2}`.toLowerCase()"
+                      >{{ item2 }}</nuxt-link
+                    >
+                  </div>
                 </a>
               </div>
               <hr />
@@ -39,8 +49,8 @@
           fill="none"
           viewBox="0 0 20 20"
           stroke="#696e79"
-          height="20px"
-          width="20px"
+          height="15px"
+          width="15px"
         >
           <path
             stroke-linecap="round"
@@ -132,7 +142,7 @@ export default {
     return {
       Nav: [
         {
-          heading: 'MEN',
+          heading: 'men',
 
           subHeading: [
             {
@@ -146,6 +156,7 @@ export default {
             {
               productType: 'Footwear',
               products: ['Casual Shoes', 'Sports Shoes', 'Flip Flops'],
+             
             },
             {
               productType: 'Gadgets',
@@ -159,7 +170,7 @@ export default {
         },
 
         {
-          heading: 'WOMEN',
+          heading: 'women',
           subHeading: [
             {
               productType: 'Western Wear',
@@ -184,7 +195,7 @@ export default {
           ],
         },
         {
-          heading: 'KIDS',
+          heading: 'kids',
           subHeading: [
             {
               productType: 'Boys Clothing',
@@ -209,7 +220,7 @@ export default {
           ],
         },
         {
-          heading: 'HOME DECOR',
+          heading: 'Decor',
           subHeading: [
             {
               productType: 'Flooring',
