@@ -30,7 +30,7 @@
                   <!-- to bring in URL -->
                   <div class="d-inline pt-0">
                     <nuxt-link
-                      :to="`/${item.heading}/${item2}`.toLowerCase()"
+                      :to="`/${item.heading}/${item2}`"
                       >{{ item2 }}</nuxt-link
                     >
                   </div>
@@ -147,7 +147,7 @@ export default {
           subHeading: [
             {
               productType: 'Topwear',
-              products: ['Tshirts', 'Jackets', 'Suits', 'Shirts'],
+              products: ['tshirts', 'Jackets', 'Suits', 'Shirts'],
             },
             {
               productType: 'Bottomwear',

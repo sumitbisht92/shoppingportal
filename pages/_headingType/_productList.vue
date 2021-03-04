@@ -1,15 +1,17 @@
 <template>
   <div class="row">
-    <div class="col-md-3 pl-4"><LeftSidebar /></div>
-    <div class="col-md-9">
-      {{ testValue }}
-      {{params}}
+    <div class="col-md-3"><LeftSidebar /></div>
+    <div class="col-md-9 mt-5">
+      <div v-for="brand in brandsList" :key="brand">
+        {{brand}}
+      </div>
+
       <!-- For iamges -->
       <div class="grid-container">
         <!-- {{ subcat.productType }} -->
         <div class="grid-item">
           <span>
-            <img :src="itemsub" alt="" />
+            <!-- <img :src="itemsub" alt="" /> -->
           </span>
         </div>
       </div>
@@ -20,13 +22,20 @@
 export default {
   data() {
     return {
-      params:this.$route.params,
-      dropdown: [
+      params: this.$route.params.headingType,
+      products: [
         {
-          heading: 'Men',
-          subHeading: [
+          category: 'men',
+          subcategory: [
             {
-              category: 'Shirts',
+              prd: 'tshirts',
+              products: [
+                { Brand: 'Arrow', Quantity: 8, color: 'Red' },
+                { Brand: 'UCB', Quantity: 6, color: 'Black' },
+              ],
+            },
+            {
+              prd: 'jackets',
               products: [
                 { Brand: 'Arrow', Quantity: 8, color: 'Red' },
                 { Brand: 'UCB', Quantity: 6, color: 'Black' },
@@ -35,10 +44,17 @@ export default {
           ],
         },
         {
-          heading: 'Women',
-          subHeading: [
+          category: 'women',
+          subcategory: [
             {
-              category: 'Shirts',
+              prd: 'tshirts',
+              products: [
+                { Brand: 'Arrow', Quantity: 8, color: 'Red' },
+                { Brand: 'UCB', Quantity: 6, color: 'Black' },
+              ],
+            },
+            {
+              prd: 'jackets',
               products: [
                 { Brand: 'Arrow', Quantity: 8, color: 'Red' },
                 { Brand: 'UCB', Quantity: 6, color: 'Black' },
@@ -47,10 +63,17 @@ export default {
           ],
         },
         {
-          heading: 'kids',
-          subHeading: [
+          category: 'kids',
+          subcategory: [
             {
-              category: 'Shirts',
+              prd: 'tshirts',
+              products: [
+                { Brand: 'Arrow', Quantity: 8, color: 'Red' },
+                { Brand: 'UCB', Quantity: 6, color: 'Black' },
+              ],
+            },
+            {
+              prd: 'jackets',
               products: [
                 { Brand: 'Arrow', Quantity: 8, color: 'Red' },
                 { Brand: 'UCB', Quantity: 6, color: 'Black' },
@@ -62,10 +85,20 @@ export default {
     }
   },
   computed: {
-    testValue() {
-      this.dropdown.filter(function (num) {
-        // return num == this.params.headingType
-      })
+    // arrFun() {
+    //   let arr = this.products.filter(function (val) {
+    //     return val.category == 'men'
+    //   })
+    //   return arr
+    // },
+    brandsList() {
+      let category = this.products.find(
+        (product) => product.category === this.$route.params.headingType
+      )
+      let subcategory = category.subcategory.find(
+        (subcategory) => subcategory.prd === this.$route.params.productList
+      ).products.map(x=> x.Brand)
+      return subcategory
     },
   },
 }
