@@ -12,16 +12,18 @@
     <div class="d-flex align-items-center">
       <div class="pl-3 dropdown" v-for="(item, index) in Nav" :key="index">
         <button
-          class="dropbtn font-weight-bold heading-hover text-color"
-          style="padding-bottom: 30px; padding-top: 26px;"
+          class="dropbtn font-weight-bold heading-hover text-color text-uppercase"
+          style="padding-bottom: 30px; padding-top: 26px"
         >
-        <nuxt-link :to="`/shop/${item.heading}`">  {{ item.heading }}</nuxt-link>
+          <nuxt-link :to="`/shop/${item.heading}`">
+            {{ item.heading }}</nuxt-link
+          >
         </button>
         <div class="dropdown-content">
           <div class="dropdown-card">
             <div v-for="(item1, index) in item.subHeading" :key="index">
               <div class="d-flex pl-5 pt-4 test">
-                <b class="text-uppercase"> {{ item1.productType }} > </b>
+                <b> {{ item1.productType }} > </b>
                 <a
                   v-for="(item2, index) in item1.products"
                   :key="index"
@@ -29,10 +31,9 @@
                 >
                   <!-- to bring in URL -->
                   <div class="d-inline pt-0">
-                    <nuxt-link
-                      :to="`/${item.heading}/${item2}`"
-                      >{{ item2 }}</nuxt-link
-                    >
+                    <nuxt-link :to="`/${item.heading}/${item2}`">{{
+                      item2
+                    }}</nuxt-link>
                   </div>
                 </a>
               </div>
@@ -142,12 +143,12 @@ export default {
     return {
       Nav: [
         {
-          heading: 'men',
+          heading: 'Men',
 
           subHeading: [
             {
               productType: 'Topwear',
-              products: ['tshirts', 'Jackets', 'Suits', 'Shirts'],
+              products: ['Tshirts', 'Jackets', 'Suits', 'Shirts'],
             },
             {
               productType: 'Bottomwear',
@@ -156,7 +157,6 @@ export default {
             {
               productType: 'Footwear',
               products: ['Casual Shoes', 'Sports Shoes', 'Flip Flops'],
-             
             },
             {
               productType: 'Gadgets',
@@ -170,7 +170,7 @@ export default {
         },
 
         {
-          heading: 'women',
+          heading: 'Women',
           subHeading: [
             {
               productType: 'Western Wear',
@@ -195,7 +195,7 @@ export default {
           ],
         },
         {
-          heading: 'kids',
+          heading: 'Kids',
           subHeading: [
             {
               productType: 'Boys Clothing',

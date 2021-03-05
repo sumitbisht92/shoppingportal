@@ -2,27 +2,22 @@
   <div class="pl-4">
     <div><h6 class="pb-4">FILTERS</h6></div>
     <hr />
-    <div class="row">
-      <div class="col-md-11">
-        <h6>BRAND</h6>
-        <div v-for="(items, index) in brands" :key="index">
-          <input
-            type="checkbox"
-            aria-label="Checkbox for following text input"
-          />
-          <span class="pl-2">{{ items }}</span>
-        </div>
-        <hr />
+    <div class="position-relative">
+      <h6>BRAND</h6>
+
+      <div v-for="(items, index) in brandsList" :key="index">
+        <input type="checkbox" aria-label="Checkbox for following text input" />
+        <span class="pl-2">{{ items }}</span>
       </div>
+      <hr />
       <div>
         <h6>COLOR</h6>
         <div v-for="(items1, index) in color" :key="index">
           {{ items1 }}
         </div>
-         
       </div>
+
       <hr />
-      
 
       <div class="circle-background">
         <svg
@@ -47,56 +42,9 @@
 </template>
 <script>
 export default {
+  props: ['brandsList'],
   data() {
-    return {
-      productList: [
-        {
-          heading: 'Men',
-          subHeading: [
-            {
-              category: 'Shirts',
-              products: [
-                { Brand: 'Arrow', Quantity: 8, color: 'Red' },
-                { Brand: 'UCB', Quantity: 6, color: 'Black' },
-              ],
-            },
-            {
-              category: 'Tshirts',
-              products: [
-                { Brand: 'Arrow', Quantity: 8, color: 'Red' },
-                { Brand: 'UCB', Quantity: 6, color: 'Black' },
-              ],
-            },
-          ],
-        },
-        {
-          heading: 'Women',
-          subHeading: [
-            {
-              category: 'Shirts',
-              products: [
-                { Brand: 'Arrow', Quantity: 8, color: 'Red' },
-                { Brand: 'UCB', Quantity: 6, color: 'Black' },
-              ],
-            },
-          ],
-        },
-        {
-          heading: 'kids',
-          subHeading: [
-            {
-              category: 'Shirts',
-              products: [
-                { Brand: 'Arrow', Quantity: 8, color: 'Red' },
-                { Brand: 'UCB', Quantity: 6, color: 'Black' },
-              ],
-            },
-          ],
-        },
-      ],
-      color: ['grey', 'blue', 'black'],
-      brands: ['Arrow', 'UCB', 'Levis', 'Allen Solly', 'Spykar', 'Wrangler'],
-    }
+    return {}
   },
 }
 </script>
@@ -104,6 +52,7 @@ export default {
 <style scoped>
 .circle-background {
   position: absolute;
+  top: 0;
   right: 15px;
   width: 30px;
   height: 30px;
