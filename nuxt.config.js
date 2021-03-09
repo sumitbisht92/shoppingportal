@@ -29,6 +29,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/formulate.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -44,7 +45,7 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
+  buildModules: [    '@braid/vue-formulate/nuxt'
   ],
   /*
   ** Nuxt.js modules

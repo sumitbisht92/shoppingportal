@@ -11,11 +11,13 @@
 
     <div class="d-flex align-items-center">
       <div class="pl-3 dropdown" v-for="(item, index) in Nav" :key="index">
-        <button
+        <button 
           class="dropbtn font-weight-bold heading-hover text-color text-uppercase"
           style="padding-bottom: 30px; padding-top: 26px"
         >
-          <nuxt-link :to="`/shop/${item.heading}`">
+          <!-- Heading URL i.e Men,women -->
+
+          <nuxt-link :to="`/shop/${item.heading}`" class="heading-hov">
             {{ item.heading }}</nuxt-link
           >
         </button>
@@ -29,11 +31,10 @@
                   :key="index"
                   href="#"
                 >
-                  <!-- to bring in URL -->
-                  <div class="d-inline pt-0">
-                    <nuxt-link :to="`/${item.heading}/${item2}`">{{
-                      item2
-                    }}</nuxt-link>
+                  <!-- To bring in productlist in URL i.e  tshirts, shirt, etc.-->
+                 
+                  <div @click="catName({x:item.heading})" class="d-inline pt-0">
+                    <nuxt-link :to="`/${item2}`">{{ item2 }}</nuxt-link>
                   </div>
                 </a>
               </div>
@@ -138,6 +139,8 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   data() {
     return {
@@ -242,6 +245,13 @@ export default {
         },
       ],
     }
+  },
+   methods: {
+    
+
+     ...mapActions("productList/", ["catName"]),
+     
+    
   },
 }
 </script>
@@ -360,5 +370,10 @@ h6 {
 .drp-profile:hover .profile-card {
   visibility: visible;
   opacity: 1;
+}
+
+.heading-hov {
+  color: #3e4152;
+  text-decoration: none;
 }
 </style>

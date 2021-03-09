@@ -4,11 +4,8 @@
     <hr />
     <div class="position-relative">
       <h6>BRAND</h6>
+      <FormulateInput v-model="Brand" :options="brandArray" type="checkbox"  />
 
-      <div v-for="(items, index) in brandsList" :key="index">
-        <input type="checkbox" aria-label="Checkbox for following text input" />
-        <span class="pl-2">{{ items }}</span>
-      </div>
       <hr />
       <div>
         <h6>COLOR</h6>
@@ -19,7 +16,7 @@
 
       <hr />
 
-      <div class="circle-background">
+      <div @click="test()" class="circle-background">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -27,7 +24,7 @@
           stroke="#696e79"
           height="15px"
           width="15px"
-          class="svg-icon"
+          class="svg-icon "
         >
           <path
             stroke-linecap="round"
@@ -42,9 +39,15 @@
 </template>
 <script>
 export default {
-  props: ['brandsList'],
+  props: ['brandArray'],
   data() {
-    return {}
+    return { Brand: false }
+  },
+  methods: {
+    test() {
+     if (this.Brand=='UCB')
+    { console.log(this.Brand)}
+    },
   },
 }
 </script>
