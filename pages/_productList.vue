@@ -1,6 +1,5 @@
 <template>
   <div class="row">
-    <!-- testing -->
     <div class="col-md-3"><LeftSidebar :brandArray="brandArray" /></div>
     <nuxt-link :to="`/${$route.params.productList}/product`">abcds</nuxt-link>
     <div class="col-md-9 mt-5">
